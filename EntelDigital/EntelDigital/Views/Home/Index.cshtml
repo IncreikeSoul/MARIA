@@ -1,0 +1,671 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="page-content-wrapper">
+    <!-- BEGIN Page Header -->
+    <header class="page-header" role="banner">
+        <!-- we need this logo when user switches to nav-function-top -->
+        <div class="page-logo">
+            <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                <img src="Content/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+            </a>
+        </div>
+        <!-- DOC: nav menu layout change shortcut -->
+        <div class="hidden-md-down dropdown-icon-menu position-relative">
+            <a href="#" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-hidden" title="Hide Navigation">
+                <i class="ni ni-menu"></i>
+            </a>
+            <ul>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-minify" title="Minify Navigation">
+                        <i class="ni ni-minify-nav"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-fixed" title="Lock Navigation">
+                        <i class="ni ni-lock-nav"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- DOC: mobile button appears during mobile width -->
+        <div class="hidden-lg-up">
+            <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                <i class="ni ni-menu"></i>
+            </a>
+        </div>
+        <div class="search">
+            <form class="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
+                <input type="text" id="search-field" placeholder="Buscador" class="form-control" tabindex="1">
+                <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+                    <i class="fal fa-times"></i>
+                </a>
+            </form>
+        </div>
+        <div class="ml-auto d-flex">
+            <!-- activate app search icon (mobile) -->
+            <div class="hidden-sm-up">
+                <a href="#" class="header-icon" data-action="toggle" data-class="mobile-search-on" data-focus="search-field" title="Search">
+                    <i class="fal fa-search"></i>
+                </a>
+            </div>
+            <!-- app settings -->
+            <!-- app shortcuts -->
+            <!-- app message -->
+            <!-- app notification -->
+            <!-- app user menu -->
+            <div>
+                <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2">
+                    <img src="Content/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+                    <!-- you can also add username next to the avatar with the codes below:
+                    <span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
+                    <i class="ni ni-chevron-down hidden-xs-down"></i> -->
+                </a>
+                <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
+                    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+                        <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+                            <span class="mr-2">
+                                <img src="Content/img/demo/avatars/avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
+                            </span>
+                            <div class="info-card-text">
+                                <div class="fs-lg text-truncate text-truncate-lg">USUARIO</div>
+                                <span class="text-truncate text-truncate-md opacity-80">PERFIL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider m-0"></div>
+                    <a class="dropdown-item fw-500 pt-3 pb-3" onclick="logout();">
+                        <span data-i18n="drpdwn.page-logout">Logout</span>
+                        <span class="float-right fw-n">LOGIN</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END Page Header -->
+    <!-- BEGIN Page Content -->
+    <!-- the #js-page-content id is needed for some plugins to initialize -->
+    <ol style="margin-bottom: 2rem !important;">
+        <li class="breadcrumb-item"><a href="javascript:void(0);">SmartAdmin</a></li>
+        <li class="breadcrumb-item">Page Views</li>
+        <li class="breadcrumb-item active">Profile</li>
+        <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-4 col-xl-4 order-lg-1 order-xl-1">
+            <!-- profile summary -->
+            <div class="card mb-g rounded-top">
+                <div class="row no-gutters row-grid">
+                    <div class="col-12">
+                        <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                            <img src="Content/media/image/MARIA_LOGO_SIN_LETRA.jpg" class="rounded-circle shadow-2 img-thumbnail" alt="" style="width: 65px;">
+                            <h5 class="mb-0 fw-700 text-center mt-3">
+                                ALO MARIA
+                                <small class="text-muted mb-0">Lima, Peru</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                764
+                                <small class="text-muted mb-0">Connections</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                1,673
+                                <small class="text-muted mb-0">Followers</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-3 text-center">
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Follow</a> <span class="text-primary d-inline-block mx-3">&#9679;</span>
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Message</a> <span class="text-primary d-inline-block mx-3">&#9679;</span>
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- rating -->
+            <div class="card mb-g">
+                <div class="row row-grid no-gutters">
+                    <div class="col-12">
+                        <div class="p-3" style="padding: 15px 30px !important;">
+                            <h2 class="mb-0 fs-xl">
+                                ALO MARIA
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-3 d-flex text-primary align-items-center fs-xl" style="padding: 16px 30px !important;">
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fal fa-star mr-1"></i>
+                            <span class="ml-auto">4/5 Stars</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="p-3">
+                            <div class="ml-auto">
+                                <div class="row text-center">
+                                    <div class="col-lg-12">
+                                        <a style="width: 260px;" href="javascript:void(0);" class="btn btn-lg btn-info" id="btn_play"><i class="fal fa-play"></i> Llamar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-xl-6 order-lg-3 order-xl-2" style="display:none;">
+            <div class="card border mb-g">
+                <div class="card-body pl-4 pt-4 pr-4 pb-0">
+                    <div class="d-flex flex-column">
+                        <div class="border-0 flex-1 position-relative shadow-top">
+                            <div class="pt-2 pb-1 pr-0 pl-0 rounded-0 position-relative" tabindex="-1">
+                                <span class="profile-image rounded-circle d-block position-absolute" style="background-image:url('Content/img/demo/avatars/avatar-admin.png'); background-size: cover;"></span>
+                                <div class="pl-5 ml-5">
+                                    <div id="txt_mensaje" contenteditable="true" data-placeholder="¿Cual es su pregunta?" class="height-10 form-content-editable"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="height-8 d-flex flex-row align-items-center flex-wrap flex-shrink-0">
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl width-1 mr-1" data-toggle="tooltip" data-original-title="More options" data-placement="top">
+                                <i class="fal fa-ellipsis-v-alt color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Attach files" data-placement="top">
+                                <i class="fal fa-paperclip color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Insert photo" data-placement="top">
+                                <i class="fal fa-camera color-fusion-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-xl-8 order-lg-2 order-xl-3">
+            <audio class="sound" src="Content/media/audio/nestle/mensaje_bienvenida.mp4"></audio>
+            <!-- skills -->
+            <div class="card mb-g">
+                <div class="row row-grid no-gutters">
+                    <div class="col-12" style="background-color: #40403b;">
+                        <div class="p-3">
+                            <h2 class="mb-0 fs-xl">
+                                <span class="left-titulo" style="color: #ebebeb;">Llamada María</span>
+                                <span id="img_responder" class='text-success right-titulo' style="display:none;">
+                                    RESPONDER&nbsp; <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12 with-scrollbar" id="div_dialogo" style="height: 454px; text-align: center; overflow-y: auto;">
+
+                        <center style="margin-top: 50px;">
+                            <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                <div class="card p-4 rounded-plus bg-faded">
+                                    <form id="js-login" novalidate="" action="intel_analytics_dashboard.html" style="text-align: left !important;">
+                                        <h2>Entel Digital</h2>
+                                        <div class="form-row" style="padding: 10px 0px;">
+                                            <div class="col">
+                                                <input type="text" id="txt_entel" class="form-control form-control-lg" placeholder="Numero de RUC" readonly style="background-color: #fff;">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </center>
+
+                        <div id="div_resultado"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var saludo = [
+            //'Buenos días',
+            'buenos días'//,
+            //'Donde estás',
+            //'que haras mañana'
+        ];
+
+        var despedida = [
+            'nos vemos'//,
+            //'Nos vemos',
+            //'Hasta mañana',
+            //'Cuidate'
+        ];
+
+        //var primeraConversacion = true;
+        var numeroPregunta = -1;
+        var fechaNacimiento = "";
+        var numeroMes = "";
+        var ponerStop = true;
+        var ultimaTranscripcion = "";
+        var esFinalTexto = false;
+        var resultadoFinal = false;
+        var tiempoEspera = 3000;
+        var validarCredencial = false;
+
+        var varRUC = "";
+
+        //Variables constantes
+        var flgModoExamen = false;
+        var timeoutSilencio = null;
+        var audio = new Audio(), i = 0;
+        var playlist = new Array();
+
+        function randomPhrase(palabras) {
+            var number = Math.floor(Math.random() * palabras.length);
+            return number;
+        }
+
+        window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+        let finalTranscript = '';
+        let recognition = new window.SpeechRecognition();
+        recognition.interimResults = true;
+        recognition.maxAlternatives = 5;
+        recognition.continuous = true;
+        recognition.lang = 'es-PE';
+        var contador =
+            recognition.onresult = (event) => {
+
+                let interimTranscript = '';
+                for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
+                    let transcript = event.results[i][0].transcript;
+                    console.log("event.results[i].isFinal: " + event.results[i].isFinal);
+                    //console.log(event.results[i]);
+                    if (event.results[i].isFinal) {
+                        esFinalTexto = true;
+                        finalTranscript += transcript;
+                    } else {
+                        esFinalTexto = false;
+                        interimTranscript += transcript;
+                    }
+                }
+
+                document.querySelector('#txt_mensaje').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
+
+                if ($.trim(interimTranscript).length > 0) {
+                    ultimaTranscripcion = interimTranscript;
+                }
+
+                console.log("esFinalTexto: " + esFinalTexto);
+                //console.log("finalTranscript: " + finalTranscript);
+                //console.log("interimTranscript: " + interimTranscript);
+                console.log("ultimaTranscripcion: " + ultimaTranscripcion);
+                /*ACA ESTA EL RECONOCEDOR*/
+                if (esFinalTexto) {
+
+                    clearTimeout(timeoutSilencio);
+                    console.log("timeoutSilencio cancelado... " + timeoutSilencio);
+
+                    //setTimeout(function(){
+                    var speechResult = $.trim(ultimaTranscripcion).toLowerCase();
+                    var textoSeparacion = "";
+
+                    switch (numeroPregunta) {
+                        case -1:
+                            if (!validarCredencial) {
+                                varRUC = obtenerRUC(speechResult);
+
+									if (varRUC.length == 11) {
+										$("#img_responder").hide(); console.log("recognition.stop()");
+										recognition.stop();
+										for (var i = 0; i < varRUC.length; i++) {
+											var letra = "";
+											/*switch (varRUC.charAt(i)) {
+												case "0": numero = "cero"; break;
+												case "1": numero = "uno"; break;
+												case "2": numero = "dos"; break;
+												case "3": numero = "tres"; break;
+												case "4": numero = "cuatro"; break;
+												case "5": numero = "cinco"; break;
+												case "6": numero = "seis"; break;
+												case "7": numero = "siete"; break;
+												case "8": numero = "ocho"; break;
+												case "9": numero = "nueve"; break;
+											}
+
+											agregarAudio(numero);
+											console.log(playlist);*/
+											if ((varRUC.length - 1) == i) {
+												agregarAudio("escorrecto");
+												reproducirAudio();
+												validarCredencial=true;
+											}
+										}
+									} else if(varRUC.length > 0){
+										sound.setAttribute("src", "Content/media/audio/seguridad/alertaErrorDNI.mp4");
+										sound.play();
+										setTimeout(function () {
+											try{
+												$("#txt_entel").val("");
+											} catch(error){}
+										}, 2000);
+                                    }
+								} else {
+									if (speechResult.includes("si") ||
+										speechResult.includes("sí") ||
+                                        speechResult.includes("se") ||
+										speechResult.includes("correcto") ||
+										speechResult.includes("es correcto") ||
+										speechResult.includes("si es correcto")) {
+										try{
+											$("#img_responder").hide(); console.log("recognition.stop()");
+											if(ponerStop) recognition.stop(); }
+										catch(error) {}
+
+										//realizarPreguntas();
+                                        validarCredencial = false;
+                                        comprobandoTieneEmpresa()
+
+									} else if (speechResult.includes("no") ||
+										speechResult.includes("incorrecto")) {
+
+										try{
+											$("#img_responder").hide(); console.log("recognition.stop()");
+											if(ponerStop) recognition.stop(); }
+										catch(error) {}
+
+										$("#txt_entel").val("");
+										bienvenidaSistema();
+									}
+								}
+						break;
+                    }
+
+                    //}, getRandom(1000,1500));
+
+                } else {
+                    var speechResult = $.trim(ultimaTranscripcion).toLowerCase();
+
+                    switch (numeroPregunta) {
+                        case -1:
+                            var texto = obtenerRUC(speechResult);
+                            if($.trim(texto).length>0) $("#txt_entel").val(texto);
+                            break;
+                    }
+                }
+            }
+
+        const sound = document.querySelector('.sound');
+        const btnPlay = document.querySelector('#btn_play');
+
+        btnPlay.addEventListener('click', () => {
+            console.log("flgModoExamen: " + flgModoExamen);
+            bienvenidaSistema();
+        });
+
+        function bienvenidaSistema() {
+            sound.setAttribute("src", "Content/media/audio/nestle/mensaje_bienvenida.mp4");
+            sound.play();
+            setTimeout(function () {
+                try {
+                    sound.setAttribute("src", "Content/media/audio/nestle/brinda_dni.mp4");
+                    sound.play();
+                } catch (error) { }
+            }, 4500);
+
+            numeroPregunta = -1;
+            validarCredencial = false;
+
+            playlist = new Array();
+
+            setTimeout(function () {
+                try { $("#img_responder").show(); console.log("recognition.start()"); recognition.start(); } catch (error) { }
+            }, 6000);
+        }
+
+        function comprobandoTieneEmpresa() {
+            var objRucBE = new Object();
+            objRucBE.RUC = varRUC;
+            $.ajax({
+                url: '/Home/ListarInfoEmpresa',
+                data: JSON.stringify(objRucBE),
+                contentType: "application/json;",
+                type: 'POST'
+            }).done(function (data, textStatus, jqXhr) {
+                console.log("Reponse Http Exitoso::: " + data.length)
+                if (data.length == 0) {
+                    alert("El usuario no tiene empresa")
+                } else {
+                    $.each(data, function (i, obj) {
+                        tablaResultadoSunarp(obj);
+                    });
+                }
+            }).fail(function (data, textStatus, jqXhr) {
+                console.log(data);
+            });
+        }
+
+        function tablaResultadoSunarp(data) {
+            var htmlTable =
+                "<center style='margin-top: 45px;'>" +
+                    "<div class='col-sm-12 col-md-12 col-lg-10 col-xl-10' style='margin: 8px 0px 45px 0px;'>" +
+                        "<div class='card p-4 rounded-plus bg-faded' stlye='font-size: 15px;'>" +
+                            "<h1 style='font-weight: bold; color: #757373;'>INFORMACIÓN DEL RUC \"" + data.ruc + "\"</h1>" +
+                            "<hr>" +
+                            "<div style='padding: 15px 0px;'>" +
+                                "<table class='table table-bordered table-hover m-0'>"+
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>"+
+                                            "<th>Nro RUC</th>"+
+                                            "<th>Tipo de Contribuyente</th>"+
+                                            "<th>Nombre</th>"+
+                                            "<th>Nombre Comercial</th>" +
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<tbody>"+
+                                        "<tr>"+
+                                            "<th scope='row'>" + data.ruc + "</th>"+
+                                            "<td>" + data.tipoContribuyente + "</td>"+
+                                            "<td>" + data.nombre + "</td>"+
+                                            "<td>" + data.nombreComercial + "</td>" +
+                                            
+                                        "</tr>"+
+                                    "</tbody>"+
+                                "</table>"+
+                            "</div>" +
+                            "<div style='padding: 15px 0px;'>" +
+                                "<table class='table table-bordered table-hover m-0'>"+
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>" +
+                                            "<th>Fecha de Inscripcion</th>"+
+                                            "<th>Fecha de Inicio de Actividades</th>"+
+                                            "<th>Estado de Contribuyente</th>"+
+                                            "<th>Condicion del Contribuyente</th>"+
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<tbody>"+
+                                        "<tr>" +
+                                            "<td scope='row'>" + data.fechaInscripcion + "</td>"+
+                                            "<th>" + data.fechaInicioActividades + "</th>"+
+                                            "<td>" + data.estadoContribuyente + "</td>"+
+                                            "<td>" + data.condicionContribuyente + "</td>"+
+                                        "</tr>"+
+                                    "</tbody>"+
+                                "</table>"+
+                            "</div>" +
+                            "<div style='padding: 15px 0px;'>" +
+                                "<table class='table table-bordered table-hover m-0'>" +
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>"+
+                                            "<th colspan='4' style='text-align: center;'>Domicilio Fiscal</th>"+
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>"+
+                                            "<th>Direccion</th>"+
+                                            "<th>Departamento</th>"+
+                                            "<th>Provincia</th>" +
+                                            "<th>Distrito</th>"+
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<tbody>"+
+                                        "<tr>"+
+                                            "<th scope='row'>" + data.direccionDomicilioFiscal + "</th>"+
+                                            "<td>" + data.departamentoDomicilioFiscal + "</td>"+
+                                            "<td>" + data.provinciaDomicilioFiscal + "</td>" +
+                                            "<td>" + data.distritoDomicilioFiscal + "</td>"+
+                                        "</tr>"+
+                                    "</tbody>"+
+                                "</table>"+
+                            "</div>" +
+                            "<div style='padding: 15px 0px;'>" +
+                                "<table class='table table-bordered table-hover m-0'>"+
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>"+
+                                            "<th>Sistema de emision de comprobante</th>"+
+                                            "<th>Actividad de comercio exterior</th>"+
+                                            "<th>Sistema de Contabilidad</th>"+
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<tbody>"+
+                                        "<tr>"+
+                                            "<td>" + data.sistemaEmisionComprobante + "</td>"+
+                                            "<td>" + data.actividadComercioExterior + "</td>"+
+                                            "<td>" + data.sistemaDeContabilidad + "</td>"+
+                                        "</tr>"+
+                                    "</tbody>"+
+                                "</table>"+
+                            "</div>" +
+                            "<div style='padding: 15px 0px;'>" +
+                                "<table class='table table-bordered table-hover m-0'>"+
+                                    "<thead class='thead-themed'>"+
+                                        "<tr class='bg-primary-400'>"+
+                                            "<th>Emisor Electronico desde</th>"+
+                                            "<th>Afiliado PLE desde</th>"+
+                                        "</tr>"+
+                                    "</thead>"+
+                                    "<tbody>"+
+                                        "<tr>"+
+                                            "<th scope='row'>" + data.emisorElectronicoDesde + "</th>"+
+                                            "<td>" + data.afiliadoPLEDesde + "</td>"+
+                                        "</tr>"+
+                                    "</tbody>"+
+                                "</table>"+
+                            "</div>" +
+                        "</div>" +
+                    "</div>" +
+                "</center>";
+
+            $("#div_resultado").html(htmlTable).show(1000);
+        }
+
+        function agregarAudio(nombre) {
+            playlist.push("Content/media/audio/seguridad/" + nombre + ".mp3");
+        }
+
+        function reproducirAudio() {
+            audio.addEventListener('ended', function () {
+                console.log("tamaño del playlist: " + playlist.length);
+                i = ++i < playlist.length ? i : 0;
+
+                //PARA PARAR EL AUDIO
+                if (i == 0) {
+                    playlist = null;
+                }
+
+                if (playlist != null && playlist.length > 0) {
+                    audio.src = playlist[i];
+                    audio.play();
+                } else {
+                    recognition.start();
+                }
+            }, true);
+            audio.volume = 0.5;
+            audio.loop = false;
+            audio.src = playlist[0];
+            audio.play();
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function obtenerRUC(texto) {
+            try {
+                var regex = /[+-]?\w+(?:\.\w+)?/g;
+                return texto.match(regex).join("").replace(' ', '');
+            } catch (error) {
+                return "";
+            }
+        };
+
+    </script>
+
+    <!-- this overlay is activated only when mobile menu is triggered -->
+    <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
+    <footer class="page-footer" role="contentinfo">
+        <div class="d-flex align-items-center flex-1 text-muted">
+            <span class="hidden-md-down fw-700">2020 © MANAR PERU</span>
+        </div>
+        <div>
+            <ul class="list-table m-0">
+            </ul>
+        </div>
+    </footer>
+    <!-- END Page Footer -->
+    <!-- BEGIN Shortcuts -->
+    <!-- modal shortcut -->
+    <div class="modal fade modal-backdrop-transparent" id="modal-shortcut" tabindex="-1" role="dialog" aria-labelledby="modal-shortcut" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-transparent" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="app-list w-auto h-auto p-0 text-left">
+                        <li>
+                            <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-3x opacity-100 color-primary-500 "></i>
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
+                                    <i class="fal fa-home icon-stack-1x opacity-100 color-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Home
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="page_inbox_general.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-3x opacity-100 color-success-500 "></i>
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-success-300 "></i>
+                                    <i class="ni ni-envelope icon-stack-1x text-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Inbox
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
+                                    <i class="fal fa-plus icon-stack-1x opacity-100 color-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Add More
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END Shortcuts -->
+</div>
