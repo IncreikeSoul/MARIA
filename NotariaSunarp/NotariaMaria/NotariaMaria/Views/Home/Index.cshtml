@@ -1,0 +1,873 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="page-content-wrapper">
+    <!-- BEGIN Page Header -->
+    <header class="page-header" role="banner">
+        <!-- we need this logo when user switches to nav-function-top -->
+        <div class="page-logo">
+            <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                <img src="Content/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+            </a>
+        </div>
+        <!-- DOC: nav menu layout change shortcut -->
+        <div class="hidden-md-down dropdown-icon-menu position-relative">
+            <a href="#" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-hidden" title="Hide Navigation">
+                <i class="ni ni-menu"></i>
+            </a>
+            <ul>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-minify" title="Minify Navigation">
+                        <i class="ni ni-minify-nav"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-fixed" title="Lock Navigation">
+                        <i class="ni ni-lock-nav"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- DOC: mobile button appears during mobile width -->
+        <div class="hidden-lg-up">
+            <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                <i class="ni ni-menu"></i>
+            </a>
+        </div>
+        <div class="search">
+            <form class="app-forms hidden-xs-down" role="search" action="page_search.html" autocomplete="off">
+                <input type="text" id="search-field" placeholder="Buscador" class="form-control" tabindex="1">
+                <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+                    <i class="fal fa-times"></i>
+                </a>
+            </form>
+        </div>
+        <div class="ml-auto d-flex">
+            <!-- activate app search icon (mobile) -->
+            <div class="hidden-sm-up">
+                <a href="#" class="header-icon" data-action="toggle" data-class="mobile-search-on" data-focus="search-field" title="Search">
+                    <i class="fal fa-search"></i>
+                </a>
+            </div>
+            <!-- app settings -->
+            <!-- app shortcuts -->
+            <!-- app message -->
+            <!-- app notification -->
+            <!-- app user menu -->
+            <div>
+                <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2">
+                    <img src="Content/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+                    <!-- you can also add username next to the avatar with the codes below:
+                <span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
+                <i class="ni ni-chevron-down hidden-xs-down"></i> -->
+                </a>
+                <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
+                    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+                        <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+                            <span class="mr-2">
+                                <img src="Content/img/demo/avatars/avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
+                            </span>
+                            <div class="info-card-text">
+                                <div class="fs-lg text-truncate text-truncate-lg">USUARIO</div>
+                                <span class="text-truncate text-truncate-md opacity-80">PERFIL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider m-0"></div>
+                    <a class="dropdown-item fw-500 pt-3 pb-3" onclick="logout();">
+                        <span data-i18n="drpdwn.page-logout">Logout</span>
+                        <span class="float-right fw-n">LOGIN</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END Page Header -->
+    <!-- BEGIN Page Content -->
+    <!-- the #js-page-content id is needed for some plugins to initialize -->
+    <ol style="margin-bottom: 2rem !important;">
+        <li class="breadcrumb-item"><a href="javascript:void(0);">SmartAdmin</a></li>
+        <li class="breadcrumb-item">Page Views</li>
+        <li class="breadcrumb-item active">Profile</li>
+        <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
+    </ol>
+    <div class="row">
+        <div class="col-lg-4 col-xl-4 order-lg-1 order-xl-1">
+            <!-- profile summary -->
+            <div class="card mb-g rounded-top">
+                <div class="row no-gutters row-grid">
+                    <div class="col-12">
+                        <div class="d-flex flex-column align-items-center justify-content-center p-4">
+                            <img src="Content/media/image/MARIA_LOGO_SIN_LETRA.jpg" class="rounded-circle shadow-2 img-thumbnail" alt="" style="width: 65px;">
+                            <h5 class="mb-0 fw-700 text-center mt-3">
+                                ALO MARIA
+                                <small class="text-muted mb-0">Lima, Peru</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                764
+                                <small class="text-muted mb-0">Connections</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center py-3">
+                            <h5 class="mb-0 fw-700">
+                                1,673
+                                <small class="text-muted mb-0">Followers</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-3 text-center">
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Follow</a> <span class="text-primary d-inline-block mx-3">&#9679;</span>
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Message</a> <span class="text-primary d-inline-block mx-3">&#9679;</span>
+                            <a href="javascript:void(0);" class="btn-link font-weight-bold">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- rating -->
+            <div class="card mb-g">
+                <div class="row row-grid no-gutters">
+                    <div class="col-12">
+                        <div class="p-3" style="padding: 15px 30px !important;">
+                            <h2 class="mb-0 fs-xl">
+                                ALO MARIA
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="p-3 d-flex text-primary align-items-center fs-xl" style="padding: 16px 30px !important;">
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fas fa-star mr-1"></i>
+                            <i class="fal fa-star mr-1"></i>
+                            <span class="ml-auto">4/5 Stars</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="p-4">
+                            <div class="ml-auto">
+                                <div class="row text-center">
+                                    <div class="col-lg-12">
+                                        <a style="width: 260px;" href="javascript:void(0);" class="btn btn-lg btn-info" id="btn_play"><i class="fal fa-play"></i> Llamar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-xl-6 order-lg-3 order-xl-2" style="display:none;">
+            <div class="card border mb-g">
+                <div class="card-body pl-4 pt-4 pr-4 pb-0">
+                    <div class="d-flex flex-column">
+                        <div class="border-0 flex-1 position-relative shadow-top">
+                            <div class="pt-2 pb-1 pr-0 pl-0 rounded-0 position-relative" tabindex="-1">
+                                <span class="profile-image rounded-circle d-block position-absolute" style="background-image:url('Content/img/demo/avatars/avatar-admin.png'); background-size: cover;"></span>
+                                <div class="pl-5 ml-5">
+                                    <div id="txt_mensaje" contenteditable="true" data-placeholder="¿Cual es su pregunta?" class="height-10 form-content-editable"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="height-8 d-flex flex-row align-items-center flex-wrap flex-shrink-0">
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl width-1 mr-1" data-toggle="tooltip" data-original-title="More options" data-placement="top">
+                                <i class="fal fa-ellipsis-v-alt color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Attach files" data-placement="top">
+                                <i class="fal fa-paperclip color-fusion-300"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-icon fs-xl mr-1" data-toggle="tooltip" data-original-title="Insert photo" data-placement="top">
+                                <i class="fal fa-camera color-fusion-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-xl-8 order-lg-2 order-xl-3">
+            <audio class="sound" src="Content/media/audio/nestle/mensaje_bienvenida.mp4"></audio>
+            <!-- skills -->
+            <div class="card mb-g">
+                <div class="row no-gutters">
+                    <div class="col-12" style="background-color: #40403b;">
+                        <div class="p-3">
+                            <h2 class="mb-0 fs-xl">
+                                <span class="left-titulo" style="color: #ebebeb;">Llamada María</span>
+                                <span id="img_responder" class='text-success right-titulo' style="display:none;">
+                                    RESPONDER&nbsp; <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12 with-scrollbar" id="div_dialogo" style="height: 461px; text-align: center; overflow-y: auto;">
+
+                        <center style="margin-top: 100px;" id="center_inicio">
+                            <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                <div class="card p-4 rounded-plus bg-faded">
+                                    <form id="js-login" novalidate="" action="intel_analytics_dashboard.html" style="text-align: left !important;">
+                                        <h2>Informacion SOAT / SUNARP</h2>
+                                        <div class="form-row" style="padding: 10px 0px;">
+                                            <div class="col">
+                                                <input type="text" id="txt_placa" class="form-control form-control-lg" placeholder="Placa" readonly style="background-color: #fff;">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="progress progress-xl" id="submit_progress" style="width:100%; margin-top: 20px;">
+                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="load">
+                                        0%
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+
+
+                        <center style='margin-top: 40px; display: none;' id="center_final">
+                            <div class='col-sm-12 col-md-12 col-lg-10 col-xl-10' style='margin: 8px 0px 45px 0px;'>
+                                <div class='card rounded-plus bg-faded' stlye='font-size: 15px;'>
+                                    <div class='card-header' style="background-color: #e8ecec !important;">
+                                        <ul class='nav nav-tabs card-header-tabs'>
+                                            <li class='nav-item'>
+                                                <a class='nav-link active' id='div_soat-tab' data-toggle='tab' href='#div_soat' role='tab' aria-controls='div_soat' aria-selected='true'>SOAT</a>
+                                            </li>
+                                            <li class='nav-item'>
+                                                <a class='nav-link' id='div_sunarp-tab' data-toggle='tab' href='#div_sunarp' role='tab' aria-controls='div_sunarp' aria-selected='false'>SUNARP</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class='card-body'>
+                                        <div class='tab-content' id='myTabContent'>
+                                            <div class='tab-pane fade show active' id='div_soat' role='tabpanel' aria-labelledby='home-tab'>
+
+                                                <h1 style='font-weight: bold; color: #757373; margin-top: 15px;'>INFORMACIÓN DE SOAT DEL VEHICULO</h1>
+                                                <hr>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-info-400'>
+                                                                <th>Nro Placa</th>
+                                                                <th>Compañia</th>
+                                                                <th>Inicio</th>
+                                                                <th>Fin</th>
+                                                                <th>Estado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsPlaca"></p></th>
+                                                                <td><p id="rpsCompania"></p></td>
+                                                                <td><p id="rpsInicio"></p></td>
+                                                                <td><p id="rpsFin"></p></td>
+                                                                <td><p id="rpsEstado"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-info-400'>
+                                                                <th>Número de Poliza</th>
+                                                                <th>Uso de Vehiculo</th>
+                                                                <th>Clase de Vehiculo</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsNumeroPoliza"></p></th>
+                                                                <td><p id="rpsUsoVehiculo"></p></td>
+                                                                <td><p id="rpsClaseVehiculo"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-info-400'>
+                                                                <th>CodigoUnicoPoliza</th>
+                                                                <th>CodigoSbsAseguradora</th>
+                                                                <th>FechaControlPolicial</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsCodigoUnicoPoliza"></p></th>
+                                                                <td><p id="rpsCodigoSbsAseguradora"></p></td>
+                                                                <td><p id="rpsFechaControlPolicial"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-info-400'>
+                                                                <th>Contratante</th>
+                                                                <th>Ubigeo</th>
+                                                                <th>Serie de Motor</th>
+                                                                <th>Serie de Chasis</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsContratante"></p></th>
+                                                                <td><p id="rpsUbigeo"></p></td>
+                                                                <td><p id="rpsSerieMotor"></p></td>
+                                                                <td><p id="rpsSerieChasis"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-info-400'>
+                                                                <th>Numero de Aseguradora</th>
+                                                                <th>Tipo de Certificado</th>
+                                                                <th>Creado</th>
+                                                                <th>Modificado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsNumeroAseguradora"></p></th>
+                                                                <td><p id="rpsTipoCertificado"></p></td>
+                                                                <td><p id="rpsCreado"></p></td>
+                                                                <td><p id="rpsActualizado"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                            <div class='tab-pane fade' id='div_sunarp' role='tabpanel' aria-labelledby='profile - tab'>
+
+                                                <h1 style='font-weight: bold; color: #757373; margin-top: 15px;'>INFORMACIÓN DE SUNARP DEL VEHICULO</h1>
+                                                <hr>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-success-400'>
+                                                                <th>Nro Placa</th>
+                                                                <th>Nro. Serial</th>
+                                                                <th>Nro. VIN</th>
+                                                                <th>Nro. Motor</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsuplate_number"></p></th>
+                                                                <td><p id="rpsuserial_number"></p></td>
+                                                                <td><p id="rpsuvin_number"></p></td>
+                                                                <td><p id="rpsuengine_number"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-success-400'>
+                                                                <th>Color</th>
+                                                                <th>Fabricacion</th>
+                                                                <th>Modelo</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsucolor"></p></th>
+                                                                <td><p id="rpsumake"></p></td>
+                                                                <td><p id="rpsumodel"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-success-400'>
+                                                                <th>Nro. valido de placa</th>
+                                                                <th>Nro. de placa anterior</th>
+                                                                <th>Estado</th>
+                                                                <th>Notas</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsuvalid_plate_number"></p></th>
+                                                                <td><p id="rpsuprevious_plate_number"></p></td>
+                                                                <td><p id="rpsustate"></p></td>
+                                                                <td><p id="rpsunotes"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-success-400'>
+                                                                <th>Branch</th>
+                                                                <th>Propietario</th>
+                                                                <th>Estado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsubranch"></p></th>
+                                                                <td><p id="rpsuowners"></p></td>
+                                                                <td><p id="rpsustatus"></p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div style='padding: 15px 0px;'>
+                                                    <table class='table table-bordered table-hover m-0'>
+                                                        <thead class='thead-themed'>
+                                                            <tr class='bg-success-400'>
+                                                                <th>Creado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope='row'><p id="rpsucreated"></p></th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var saludo = [
+            //'Buenos días',
+            'buenos días'//,
+            //'Donde estás',
+            //'que haras mañana'
+        ];
+
+        var despedida = [
+            'nos vemos'//,
+            //'Nos vemos',
+            //'Hasta mañana',
+            //'Cuidate'
+        ];
+
+        //var primeraConversacion = true;
+        var numeroPregunta = -1;
+        var fechaNacimiento = "";
+        var numeroMes = "";
+        var ponerStop = true;
+        var ultimaTranscripcion = "";
+        var esFinalTexto = false;
+        var resultadoFinal = false;
+        var tiempoEspera = 3000;
+        var validarCredencial = false;
+
+        var varPlaca = "";
+
+        //Variables constantes
+        var flgModoExamen = false;
+        var timeoutSilencio = null;
+        var audio = new Audio(), i = 0;
+        var playlist = new Array();
+
+        function randomPhrase(palabras) {
+            var number = Math.floor(Math.random() * palabras.length);
+            return number;
+        }
+
+        window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+        let finalTranscript = '';
+        let recognition = new window.SpeechRecognition();
+        recognition.interimResults = true;
+        recognition.maxAlternatives = 5;
+        recognition.continuous = true;
+        recognition.lang = 'es-PE';
+        var contador =
+            recognition.onresult = (event) => {
+
+                let interimTranscript = '';
+                for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
+                    let transcript = event.results[i][0].transcript;
+                    console.log("event.results[i].isFinal: " + event.results[i].isFinal);
+                    //console.log(event.results[i]);
+                    if (event.results[i].isFinal) {
+                        esFinalTexto = true;
+                        finalTranscript += transcript;
+                    } else {
+                        esFinalTexto = false;
+                        interimTranscript += transcript;
+                    }
+                }
+
+                document.querySelector('#txt_mensaje').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
+
+                if ($.trim(interimTranscript).length > 0) {
+                    ultimaTranscripcion = interimTranscript;
+                }
+
+                console.log("esFinalTexto: " + esFinalTexto);
+                //console.log("finalTranscript: " + finalTranscript);
+                //console.log("interimTranscript: " + interimTranscript);
+                console.log("ultimaTranscripcion: " + ultimaTranscripcion);
+                /*ACA ESTA EL RECONOCEDOR*/
+                if (esFinalTexto) {
+
+                    clearTimeout(timeoutSilencio);
+                    console.log("timeoutSilencio cancelado... " + timeoutSilencio);
+
+                    //setTimeout(function(){
+                    var speechResult = $.trim(ultimaTranscripcion).toLowerCase();
+                    var textoSeparacion = "";
+
+                    switch (numeroPregunta) {
+                        case -1:
+                            if (!validarCredencial) {
+                                varPlaca = obtenerPlaca(speechResult).toUpperCase();
+				
+									if (varPlaca.length == 6) {
+										$("#img_responder").hide(); console.log("recognition.stop()");
+										recognition.stop();
+										for (var i = 0; i < varPlaca.length; i++) {
+											var letra = "";
+											/*switch (varPlaca.charAt(i)) {
+												case "0": numero = "cero"; break;
+												case "1": numero = "uno"; break;
+												case "2": numero = "dos"; break;
+												case "3": numero = "tres"; break;
+												case "4": numero = "cuatro"; break;
+												case "5": numero = "cinco"; break;
+												case "6": numero = "seis"; break;
+												case "7": numero = "siete"; break;
+												case "8": numero = "ocho"; break;
+												case "9": numero = "nueve"; break;
+											}
+
+											agregarAudio(numero);
+											console.log(playlist);*/
+											if ((varPlaca.length - 1) == i) {
+												agregarAudio("escorrecto");
+												reproducirAudio();
+												validarCredencial=true;
+											}
+										}
+									} else if(varPlaca.length > 0){
+										sound.setAttribute("src", "Content/media/audio/seguridad/alertaErrorDNI.mp4");
+										sound.play();
+										setTimeout(function () {
+											try{ 
+												$("#txt_placa").val("");
+											} catch(error){}
+										}, 2000);
+                                    }
+								} else {
+									if (speechResult.includes("si") || 
+										speechResult.includes("sí") || 
+                                        speechResult.includes("se") || 
+										speechResult.includes("correcto") ||
+										speechResult.includes("es correcto") || 
+										speechResult.includes("si es correcto")) {
+										try{ 
+											$("#img_responder").hide(); console.log("recognition.stop()");
+											if(ponerStop) recognition.stop(); } 
+										catch(error) {}
+
+                                        enviarPlacaVehiculo();
+
+                                        var timerId, percent;
+										percent = 0;
+										$('#pay').attr('disabled', true);
+										$('#load').css('width', '0px');
+										$('#load').addClass('progress-bar-striped active');
+
+										timerId = setInterval(function() {
+											// increment progress bar
+											percent += (Math.floor(Math.random() * (10 - 1)) + 1);
+											$('#load').css('width', percent + '%');
+											$('#load').html(percent + '%');
+											// complete
+											if (percent >= 100) {
+												clearInterval(timerId);
+												$('#pay').attr('disabled', false);
+												$('#load').removeClass('progress-bar-striped active');
+                                                $('#load').html('Carga Completa');
+
+                                                consultarInfoVehiculo();
+                                                $('#center_inicio').css('display', 'none');
+                                                $('#center_final').css('display', '');
+											}
+										}, 1000);
+										
+									} else if (speechResult.includes("no") || 
+										speechResult.includes("incorrecto")) {
+										
+										try{ 
+											$("#img_responder").hide(); console.log("recognition.stop()");
+											if(ponerStop) recognition.stop(); } 
+										catch(error) {}
+										
+										$("#txt_placa").val("");
+										bienvenidaSistema();
+									}
+								}
+						break;
+                    }
+
+                    //}, getRandom(1000,1500));
+
+                } else {
+                    var speechResult = $.trim(ultimaTranscripcion).toLowerCase();
+
+                    switch (numeroPregunta) {
+                        case -1:
+                            var texto = obtenerPlaca(speechResult).toUpperCase();
+                            if($.trim(texto).length>0) $("#txt_placa").val(texto);
+                            break;
+                    }
+                }
+            }
+
+        const sound = document.querySelector('.sound');
+        const btnPlay = document.querySelector('#btn_play');
+
+        btnPlay.addEventListener('click', () => {
+            console.log("flgModoExamen: " + flgModoExamen);
+            bienvenidaSistema();
+        });
+
+        function bienvenidaSistema() {
+            sound.setAttribute("src", "Content/media/audio/nestle/mensaje_bienvenida.mp4");
+            sound.play();
+            setTimeout(function () {
+                try {
+                    sound.setAttribute("src", "Content/media/audio/nestle/brinda_dni.mp4");
+                    sound.play();
+                } catch (error) { }
+            }, 4500);
+
+            numeroPregunta = -1;
+            validarCredencial = false;
+
+            playlist = new Array();
+
+            setTimeout(function () {
+                try { $("#img_responder").show(); console.log("recognition.start()"); recognition.start(); } catch (error) { }
+            }, 6000);
+        }
+
+        function enviarPlacaVehiculo() {
+            var objListaPlacaBE = new Object();
+            objListaPlacaBE.placa = varPlaca;
+            $.ajax({
+                url: '/Home/InsertarPlaca',
+                data: JSON.stringify(objListaPlacaBE),
+                contentType: "application/json;",
+                type: 'POST'
+            }).done(function (data, textStatus, jqXhr) {
+                console.log("Reponse INSERT Http Exitoso!");
+            }).fail(function (data, textStatus, jqXhr) {
+                console.log(data);
+            });
+        }
+
+        function consultarInfoVehiculo() {
+            var objListaPlacaBE = new Object();
+            objListaPlacaBE.placa = varPlaca;
+            $.ajax({
+                url: '/Home/ListarInfoVehiculo',
+                data: JSON.stringify(objListaPlacaBE),
+                contentType: "application/json;",
+                type: 'POST'
+            }).done(function (data, textStatus, jqXhr) {
+                console.log("Consulta completa.")
+                $.each(data, function (i, obj) {
+                    if (obj.listaSoat.length == 0) {
+                        console.log("La placa el que busca no se encuentra en SOAT");
+                        $('#rpsPlaca').text("---"); $('#rpsCompania').text("---"); $('#rpsInicio').text("---"); $('#rpsFin').text("---");
+                        $('#rpsEstado').text("---"); $('#rpsNumeroPoliza').text("---"); $('#rpsUsoVehiculo').text("---"); $('#rpsClaseVehiculo').text("---");
+                        $('#rpsCodigoUnicoPoliza').text("---"); $('#rpsCodigoSbsAseguradora').text("---"); $('#rpsFechaControlPolicial').text("---");
+                        $('#rpsContratante').text("---"); $('#rpsUbigeo').text("---"); $('#rpsSerieMotor').text("---"); $('#rpsSerieChasis').text("---");
+                        $('#rpsNumeroAseguradora').text("---"); $('#rpsTipoCertificado').text("---"); $('#rpsCreado').text("---"); $('#rpsActualizado').text("---");
+                    } else {
+                        $.each(obj.listaSoat, function (i, objSoat) {
+                            $('#rpsPlaca').text(objSoat.Placa);
+                            $('#rpsCompania').text(objSoat.Compania);
+                            $('#rpsInicio').text(objSoat.Inicio);
+                            $('#rpsFin').text(objSoat.Fin);
+                            $('#rpsEstado').text(objSoat.Estado);
+                            $('#rpsNumeroPoliza').text(objSoat.NumeroPoliza);
+                            $('#rpsUsoVehiculo').text(objSoat.UsoVehiculo);
+                            $('#rpsClaseVehiculo').text(objSoat.ClaseVehiculo);
+                            $('#rpsCodigoUnicoPoliza').text(objSoat.CodigoUnicoPoliza);
+                            $('#rpsCodigoSbsAseguradora').text(objSoat.CodigoSbsAseguradora);
+                            $('#rpsFechaControlPolicial').text(objSoat.FechaControlPolicial);
+                            $('#rpsContratante').text(objSoat.Contratante);
+                            $('#rpsUbigeo').text(objSoat.Ubigeo);
+                            $('#rpsSerieMotor').text(objSoat.SerieMotor);
+                            $('#rpsSerieChasis').text(objSoat.SerieChasis);
+                            $('#rpsNumeroAseguradora').text(objSoat.NumeroAseguradora);
+                            $('#rpsTipoCertificado').text(objSoat.TipoCertificado);
+                            $('#rpsCreado').text(objSoat.Creado);
+                            $('#rpsActualizado').text(objSoat.Actualizado);
+                        });
+                    }
+
+                    if (obj.listaSunarp.length == 0) {
+                        alert("La placa el que busca no se encuentra en SUNARP");
+                        $('#rpsuplate_number').text("---"); $('#rpsuserial_number').text("---"); $('#rpsuvin_number').text("---");
+                        $('#rpsuengine_number').text("---"); $('#rpsucolor').text("---"); $('#rpsumake').text("---"); $('#rpsumodel').text("---");
+                        $('#rpsuvalid_plate_number').text("---"); $('#rpsuprevious_plate_number').text("---"); $('#rpsustate').text("---");
+                        $('#rpsunotes').text("---"); $('#rpsubranch').text("---"); $('#rpsuowners').text("---"); $('#rpsustatus').text("---"); $('#rpsucreated').text("---");
+                    } else {
+                        $.each(obj.listaSunarp, function (i, objSunarp) {
+                            $('#rpsuplate_number').text(objSunarp.plate_number);
+                            $('#rpsuserial_number').text(objSunarp.serial_number);
+                            $('#rpsuvin_number').text(objSunarp.vin_number);
+                            $('#rpsuengine_number').text(objSunarp.engine_number);
+                            $('#rpsucolor').text(objSunarp.color);
+                            $('#rpsumake').text(objSunarp.make);
+                            $('#rpsumodel').text(objSunarp.model);
+                            $('#rpsuvalid_plate_number').text(objSunarp.valid_plate_number);
+                            $('#rpsuprevious_plate_number').text(objSunarp.previous_plate_number);
+                            $('#rpsustate').text(objSunarp.state);
+                            $('#rpsunotes').text(objSunarp.notes);
+                            $('#rpsubranch').text(objSunarp.branch);
+                            $('#rpsuowners').text(objSunarp.owners);
+                            $('#rpsustatus').text(objSunarp.status);
+                            $('#rpsucreated').text(objSunarp.created);
+                        });
+                    }
+                });
+
+            }).fail(function (data, textStatus, jqXhr) {
+                console.log(data);
+            });
+        }
+
+        function agregarAudio(nombre) {
+            playlist.push("Content/media/audio/seguridad/" + nombre + ".mp3");
+        }
+
+        function reproducirAudio() {
+            audio.addEventListener('ended', function () {
+                console.log("tamaño del playlist: " + playlist.length);
+                i = ++i < playlist.length ? i : 0;
+
+                //PARA PARAR EL AUDIO
+                if (i == 0) {
+                    playlist = null;
+                }
+
+                if (playlist != null && playlist.length > 0) {
+                    audio.src = playlist[i];
+                    audio.play();
+                } else {
+                    recognition.start();
+                }
+            }, true);
+            audio.volume = 0.5;
+            audio.loop = false;
+            audio.src = playlist[0];
+            audio.play();
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function obtenerPlaca(texto) {
+            try {
+                var regex = /[+-]?\w+(?:\.\w+)?/g;
+                return texto.match(regex).join("").replace(' ', '');
+            } catch (error) {
+                return "";
+            }
+        };
+
+    </script>
+
+    <!-- this overlay is activated only when mobile menu is triggered -->
+    <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
+    <footer class="page-footer" role="contentinfo">
+        <div class="d-flex align-items-center flex-1 text-muted">
+            <span class="hidden-md-down fw-700">2020 © MANAR PERU</span>
+        </div>
+        <div>
+            <ul class="list-table m-0">
+            </ul>
+        </div>
+    </footer>
+    <!-- END Page Footer -->
+    <!-- BEGIN Shortcuts -->
+    <!-- modal shortcut -->
+    <div class="modal fade modal-backdrop-transparent" id="modal-shortcut" tabindex="-1" role="dialog" aria-labelledby="modal-shortcut" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-transparent" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="app-list w-auto h-auto p-0 text-left">
+                        <li>
+                            <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-3x opacity-100 color-primary-500 "></i>
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
+                                    <i class="fal fa-home icon-stack-1x opacity-100 color-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Home
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="page_inbox_general.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-3x opacity-100 color-success-500 "></i>
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-success-300 "></i>
+                                    <i class="ni ni-envelope icon-stack-1x text-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Inbox
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="intel_introduction.html" class="app-list-item text-white border-0 m-0">
+                                <div class="icon-stack">
+                                    <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
+                                    <i class="fal fa-plus icon-stack-1x opacity-100 color-white"></i>
+                                </div>
+                                <span class="app-list-name">
+                                    Add More
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END Shortcuts -->
+</div>
