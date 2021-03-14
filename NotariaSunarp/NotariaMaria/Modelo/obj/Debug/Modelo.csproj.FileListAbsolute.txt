@@ -8,3 +8,9 @@ D:\PROYECTOS SOUL.inc\2020\NotariaSunarp\NotariaMaria\Modelo\bin\Debug\Modelo.pd
 D:\PROYECTOS SOUL.inc\2020\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
 D:\PROYECTOS SOUL.inc\2020\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.dll
 D:\PROYECTOS SOUL.inc\2020\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.pdb
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\bin\Debug\Modelo.dll
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\bin\Debug\Modelo.pdb
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.dll
+E:\03 Proyectos\Repositories\MARIA\NotariaSunarp\NotariaMaria\Modelo\obj\Debug\Modelo.pdb
